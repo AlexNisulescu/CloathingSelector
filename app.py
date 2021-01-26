@@ -11,8 +11,14 @@ app = Flask(__name__)
 def index():
 	if request.method == 'POST':
 		data = request.form['city_name']
-		WeatherGather.send_API(data)
-		temperature,humidity,wind=WeatherParser.read_JSON()
+		try:
+			WeatherGather.send_API(data)
+			temperature,humidity,wind=WeatherParser.read_JSON()
+		except:
+			data=""
+			temperature=""
+			humidity=""
+			wind=""
 	else:
 		data=""
 		temperature=""
