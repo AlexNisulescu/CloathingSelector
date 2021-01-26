@@ -1,9 +1,5 @@
 from flask import Flask, request, jsonify
 from flask import render_template
-from flask_mysqldb import MySQL
-import MySQLdb 
-import os
-
 import WeatherGather
 import WeatherParser
 
@@ -19,6 +15,9 @@ def index():
 		temperature,humidity,wind=WeatherParser.read_JSON()
 	else:
 		data=""
+		temperature=""
+		humidity=""
+		wind=""
 	return render_template('index.html',city=data,temp=temperature,umiditate=humidity,wind=wind)
 
 
