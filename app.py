@@ -13,18 +13,20 @@ def index():
 		data = request.form['city_name']
 		try:
 			WeatherGather.send_API(data)
-			temperature,humidity,wind=WeatherParser.read_JSON()
+			cityName,temperature,humidity,wind=WeatherParser.read_JSON()
 		except:
+			cityName=""
 			data=""
 			temperature=""
 			humidity=""
 			wind=""
 	else:
+		cityName=""
 		data=""
 		temperature=""
 		humidity=""
 		wind=""
-	return render_template('index.html',city=data,temp=temperature,umiditate=humidity,wind=wind)
+	return render_template('index.html',city=cityName,temp=temperature,umiditate=humidity,wind=wind)
 
 
 

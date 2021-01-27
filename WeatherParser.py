@@ -7,4 +7,4 @@ def read_JSON():
 	temperature=data['main']['temp']
 	humidity=data['main']['humidity']
 	wind=data['wind']['speed']
-	return temperature,humidity,wind
+	return cityName,temperature,humidity,wind
