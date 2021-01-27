@@ -1,22 +1,23 @@
 div.header1{
 	color:white;
-	background-color:
-	background: rgb(2,0,36);
-	background: linear-gradient(90deg, rgba(0,58,87,1) 0%, rgba(0,95,156,1) 25%, rgba(0,177,191,1) 75%, rgba(0,255,235,1) 90%); 
+	
 	margin-left:200px;
 	margin-right:200px;
-	height:100px;
+	height:250px;
 	text-align:center;
 	font-size:40px;
-	padding-top:40px;
 	font-family: Courier New, monospace;
+	background-image: url('../images/background.png');
+	background-repeat: no-repeat;
 }
 
 .form-inline {  
 	display: flex;
 	flex-flow: row wrap;
-	align-items: center;
+	align-items: center;	
 }
+
+
 
 div.body0{
 	margin-top:10px;

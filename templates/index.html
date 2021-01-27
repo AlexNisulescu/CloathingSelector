@@ -3,12 +3,46 @@
 <head>
 <link rel="stylesheet" href="index.css">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDagylAmkrAX3bUEwJrJwY9eJLpxTGA3BY&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      #map {
+        height: 400px;
+        width: 100%-400px;
+		margin-left:200px;
+		margin-right:200px;
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Uluru
+        const uluru = { lat: -25.344, lng: 131.036 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: uluru,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+        });
+      }
+    </script>
+
+
 </head>
 
 <body>
 	<div class="header1">
-		pufuWeather
+
 	</div>
+
+	<div class="map" id="map"></div>
 
 	<div class="body0">
 		<div class="body1">
@@ -38,6 +72,9 @@
 				Viteza vantului:{{wind}}<br>
 		</div>
 	</div>
+
 </body>
+
+
 
 </html>
