@@ -26,7 +26,7 @@ def index():
 		temperature=""
 		humidity=""
 		wind=""
-	return render_template('index.html',city=cityName,temp=temperature,umiditate=humidity,wind=wind)
+	return render_template('index.html',city=cityName,temp=str(temperature)+"°C",umiditate=str(humidity)+"%",wind=str(wind)+" km/h")
 
 
 
