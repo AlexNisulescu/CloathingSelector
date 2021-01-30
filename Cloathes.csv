@@ -9,7 +9,7 @@
 8,Jacheta anti vant,Top,5,15,1,/img/8.jpg
 9,Palarie,Cap,10,20,0,/img/9.jpg
 10,Veston,Top,10,20,1,/img/10.jpg
-11,Pantaloni costum,Pantaloni,15,30,0,/img/11.jpg
+11,Pantaloni costum,Pantaloni,10,30,0,/img/11.jpg
 12,Camasa,Top,15,30,0,/img/12.jpg
 13,Bluza termica,Top,5,15,0,/img/13.jpg
 14,Pantaloni trening,Pantaloni,10,25,0,/img/14.jpg
@@ -24,3 +24,6 @@
 23,Pullover,Top,15,20,0,/img/23.jpg
 24,Sort de baie,Pantaloni,25,35,1,/img/24.jpg
 25,Maieu,Top,25,35,0,/img/25.jpg
+26,Sandale,Shoes,25,35,0,/img/26.jpg
+27,Palton,Top,-15,5,0,/img/27.jpg
+28,Sacou,Top,10,30,0,/img/28.jpg
