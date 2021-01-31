@@ -1,0 +1,144 @@
+body {
+  background-color: rgb(0,0,35);
+}
+
+div.header1{
+	max-width: 1200px;
+	color:white;
+	margin-left:200px;
+	margin-right:200px;
+	height:250px;
+	text-align:center;
+	font-size:40px;
+	font-family: Courier New, monospace;
+	background-image: url('../images/background.png');
+	background-repeat: no-repeat;
+}
+
+.form-inline {  
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;	
+}
+
+
+
+div.body0{
+	max-width: 1100px;
+	margin-top:10px;
+	color:black;
+	margin-left:200px;
+	margin-right:200px;
+background: rgb(5,5,101);
+background: radial-gradient(circle, rgba(5,5,101,1) 0%, rgba(13,13,71,0.9808298319327731) 35%, rgba(0,0,25,0.6839110644257703) 100%);
+	height:800px;
+	padding-left:100px;
+	padding-top:100px;
+	color:white;
+}
+
+div.body1{
+	display: flex;
+	justify-content: center;
+}
+
+.form-inline {  
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+}
+
+input[type=text], select {
+	padding: 10px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-family: Courier, monospace;
+	max-width: 700px;
+	width:100%-100px;
+
+}
+
+.label{
+	color:white;
+	font-family: Courier, monospace;
+}
+
+.button{
+	background-color: white;
+	border: none;
+	text-align: center;
+	padding: 10px 20px;
+	font-size: 15px;
+	color:black;
+	font-family: Courier, monospace;
+}
+
+
+
+div.body2{
+	margin-top:200px;
+	position: relative;
+	height: 400px;
+	z-index: 15;
+	top: 20%;
+	left: 50%;
+	margin: -100px 0 0 -150px;
+	float:left;
+}
+
+div.hat{
+	background-color:rgba(0,0,0,1);
+	width:100px;
+	height:100px;
+	margin-left:100px;
+}
+
+div.hands{
+	background-color:rgba(255,255,255,1);
+	width:100px;
+	height:100px;
+	margin-left:100px;
+}
+
+
+div.body_h{
+	background-color:rgba(200,200,200,1);
+	width:100px;
+	height:100px;
+	margin-left:100px;
+}
+
+div.pants{
+	background-color:rgba(150,150,150,1);
+	width:100px;
+	margin-left:100px;
+	height:100px;
+}
+
+div.shoes{
+	background-color:rgba(100,100,100,1);
+	width:100px;
+	margin-left:100px;
+	height:100px;
+}
+
+div.body3{
+	margin-top:100px;
+	font-family: Courier, monospace;
+}
+
+
+
+
+div.body4{
+	max-width: 1200px;
+	width:100%;
+	background-color:white;
+	color:black;
+	margin-left:200px;
+	margin-right:200px;
+	text-align: center;
+}

@@ -1,0 +1,29 @@
+﻿Nr.Crt,Nume,Tip,Temperatura Minima,Temperatura Maxima,Impermeabilitate,Link Poza
+1,Blugi,Pants,0,20,0,/img/1.jpg
+2,Pantaloni schi,Pants,-20,5,1,/img/2.jpg
+3,Tricou,Top,15,35,0,/img/3.jpg
+4,Caciula,Cap,-20,10,0,/img/4.jpg
+5,Sapca,Cap,10,30,0,/img/5.jpg
+6,Polar,Top,0,10,0,/img/6.jpg
+7,Geaca Iarna,Top,-20,5,1,/img/7.jpg
+8,Jacheta anti vant,Top,5,15,1,/img/8.jpg
+9,Palarie,Cap,10,20,0,/img/9.jpg
+10,Veston,Top,10,20,1,/img/10.jpg
+11,Pantaloni costum,Pants,10,30,0,/img/11.jpg
+12,Camasa,Top,15,30,0,/img/12.jpg
+13,Bluza termica,Top,5,15,0,/img/13.jpg
+14,Pantaloni trening,Pants,10,25,0,/img/14.jpg
+15,Bluza trening,Top,10,25,0,/img/15.jpg
+16,Sweatpants,Pants,5,20,0,/img/16.jpg
+17,Sneakers,Shoes,10,35,0,/img/17.jpg
+18,Bocanci,Shoes,-20,10,1,/img/18.jpg
+19,Pantofi,Shoes,5,35,1,/img/19.jpg
+20,Ghete,Shoes,-10,5,1,/img/20.jpg
+21,Pantaloni scurti,Pants,25,35,0,/img/21.jpg
+22,Hanorac,Top,10,20,0,/img/22.jpg
+23,Pullover,Top,15,20,0,/img/23.jpg
+24,Sort de baie,Pants,25,35,1,/img/24.jpg
+25,Maieu,Top,25,35,0,/img/25.jpg
+26,Sandale,Shoes,25,35,0,/img/26.jpg
+27,Palton,Top,-15,5,0,/img/27.jpg
+28,Sacou,Top,10,30,0,/img/28.jpg
