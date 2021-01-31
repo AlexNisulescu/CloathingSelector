@@ -3,9 +3,6 @@
 # temperature,humidity,wind
 # @author Vlad Florea
 
-#Formula used for the actual weather: Temp - temp* 0.3*wind(m/s) - (Temp*humidity(procent))/2
-#Types of clothes are pants, top and hat  
-
 import ClothesFactory  
 import random
 import copy
@@ -21,7 +18,7 @@ rainMargin = 0.5
 #Defining an error increase basesd on the impermeability of the item
 rainErrIncrease = 0.2
 
-#Defining the how important each item is for clothes type as a percent 
+#Defining the importantness of each item as a percent 
 hatPercentage = 0.10
 pantsPercentage = 0.35
 topPercentage =0.3
@@ -29,18 +26,24 @@ shoesPercentage= 0.25
 
 
 
-#Class we use to hold a forecast
+#Class we use to encapsulate a forecast
 class Forecast:
      #Constructor
     def __init__(self,temperature: float, humidity: float, wind: float): 
         self.temperature= temperature
         self.humidity=humidity
         self.wind=wind
+        #Compute how the weather actually feels like
+        #Probably not the best formula, but it does its job
+        self.weatherFeelsLike = self.temperature - 0.2*self.wind - (self.temperature*self.humidity)/2
+
     
     def printMyself(self):
+        print("Weather feels like:"+str(self.weatherFeelsLike))
         print("Temperature:"+str(self.temperature))
         print("Humidity:"+str(self.humidity))
         print("Wind:"+str(self.wind))
+        
 
 
 #Class we use to hold an outfit configuation
@@ -78,27 +81,26 @@ def generateRandomClothConfig(startConfiguration: ClothConfiguration):
 
     return startConfiguration
 
-
-#Function we use to compute the actualWeather
-def getActualWeather(temp: float, wind: float, humidity: float):
-    return temp - temp*0.3*wind - (temp*humidity)/2
-
+#Function we use to compute the avg temperature
+def computeAverageTemp(minTemp: float, maxTemp:float):
+    return (minTemp+maxTemp)/2
 
 #Function we use to check an outfit against the current weather
+#@params: configuration -> current cloth configuration
+#         forecast -> current forecast
+#@returns: error -> computed error for the given configuration against the forecast
 def checkConfig(configuration: ClothConfiguration,forecast:Forecast):
     #Check if its raining
     rainBool= False
     if(forecast.humidity > rainMargin):
         rainBool= True
 
-    #Compute how the weather actually feels like
-    weatherFeelsLike = forecast.temperature - forecast.temperature*0.3*forecast.wind - (forecast.temperature*forecast.humidity)/2
-
-    #For each item, determine the minimum error between one of the extremities (minTemp/ maxTemp)
-    hatErr=min(abs(configuration.hats[configuration.indexHats].minTemp - weatherFeelsLike),abs(configuration.hats[configuration.indexHats].maxTemp - weatherFeelsLike))
-    pantsErr=min(abs(configuration.pants[configuration.indexPants].minTemp - weatherFeelsLike),abs(configuration.pants[configuration.indexPants].maxTemp - weatherFeelsLike))
-    topErr=min(abs(configuration.tops[configuration.indexTops].minTemp - weatherFeelsLike),abs(configuration.tops[configuration.indexTops].maxTemp - weatherFeelsLike))
-    shoesErr=min(abs(configuration.tops[configuration.indexShoes].minTemp - weatherFeelsLike),abs(configuration.shoes[configuration.indexShoes].maxTemp - weatherFeelsLike))
+    weatherFeelsLike = forecast.weatherFeelsLike
+    #For each item, determine the error from the actual temperature to the average acceptance temperature (minTemp+maxTemp/2)
+    hatErr=abs(computeAverageTemp(configuration.hats[configuration.indexHats].minTemp,configuration.hats[configuration.indexHats].maxTemp) - weatherFeelsLike)
+    pantsErr=abs(computeAverageTemp(configuration.pants[configuration.indexPants].minTemp,configuration.pants[configuration.indexPants].maxTemp) - weatherFeelsLike)
+    topErr=abs(computeAverageTemp(configuration.tops[configuration.indexTops].minTemp,configuration.tops[configuration.indexTops].maxTemp) - weatherFeelsLike)
+    shoesErr=abs(computeAverageTemp(configuration.shoes[configuration.indexShoes].minTemp,configuration.shoes[configuration.indexShoes].maxTemp) - weatherFeelsLike)
 
 
     #If it rains and the item is not waterproof, increase the error by 20%
@@ -119,6 +121,9 @@ def checkConfig(configuration: ClothConfiguration,forecast:Forecast):
 
 
 #Function we use to generate an available outfit using the hill climbing algorithm
+#@params: csvPath: path to the csv file
+#forecast: Forecast obj that holds the current weather
+#@returns: crtConfig: ClothConfiguration object that holds the current configuration
 def findWardrobe(csvPath: str, forecast:Forecast):
     wardrobe = ClothesFactory.generateClothesFromCsv(csvPath)
 
@@ -206,11 +211,10 @@ def findWardrobe(csvPath: str, forecast:Forecast):
     return crtConfig,minErr
 
 
-
 #For testing
 if __name__ == '__main__':
     csvPath ="../resources/Cloathes.csv"
-    testForecast = Forecast(23.3,0.2,4)
+    testForecast = Forecast(30,0.2,4)
     print("Current forecast is:")
     testForecast.printMyself()
 
