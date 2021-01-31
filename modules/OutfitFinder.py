@@ -211,6 +211,20 @@ def findWardrobe(csvPath: str, forecast:Forecast):
     return crtConfig,minErr
 
 
+
+def HC(temp,humidity,wind):
+	csvPath ="./resources/Cloathes.csv"
+	testForecast = Forecast(temp,humidity,wind)
+	crtConfig,crtErr = findWardrobe(csvPath,testForecast)
+	for i in range(HILL_CLIMB_REITERS):
+		newConfig,newErr = findWardrobe(csvPath,testForecast)
+		if(newErr < crtErr):
+			crtErr=newErr
+			crtConfig=newConfig
+	return crtConfig.hats[crtConfig.indexHats].printMyself(),crtConfig.tops[crtConfig.indexTops].printMyself(),crtConfig.pants[crtConfig.indexPants].printMyself(),crtConfig.shoes[crtConfig.indexShoes].printMyself()
+
+#print(HC(30,0.2,4))
+'''
 #For testing
 if __name__ == '__main__':
     csvPath ="../resources/Cloathes.csv"
@@ -220,7 +234,7 @@ if __name__ == '__main__':
 
     print("Running hill climb algorithm for " + str(HILL_CLIMB_REITERS)+ " times...")
     crtConfig,crtErr = findWardrobe(csvPath,testForecast)
-    for i in range(HILL_CLIMB_REITERS):
+    for i in range(HILL_CLIMB_REITERS):R
         newConfig,newErr = findWardrobe(csvPath,testForecast)
         if(newErr < crtErr):
             crtErr=newErr
@@ -235,4 +249,4 @@ if __name__ == '__main__':
     crtConfig.pants[crtConfig.indexPants].printMyself()
     print("Shoes:")
     crtConfig.shoes[crtConfig.indexShoes].printMyself()
-    
+'''

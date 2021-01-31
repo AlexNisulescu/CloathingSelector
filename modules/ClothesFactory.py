@@ -31,10 +31,11 @@ class ClothItem:
         self.impermeability = impermeability
 
     def printMyself(self):
-        print(self.name)
-        print("minTemp:"+str(self.minTemp))
-        print("maxTemp:"+str(self.maxTemp))
-        print("Impermeability:"+str(self.impermeability))
+        #print(self.name)
+        #print("minTemp:"+str(self.minTemp))
+        #print("maxTemp:"+str(self.maxTemp))
+        #print("Impermeability:"+str(self.impermeability))
+        return (self.name)
 
 
 

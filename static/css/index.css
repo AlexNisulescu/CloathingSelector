@@ -93,7 +93,6 @@ div.hat{
 	background-color:rgba(0,0,0,1);
 	width:100px;
 	height:100px;
-	margin-bottom:0px;
 	margin-left:100px;
 }
 
@@ -101,7 +100,6 @@ div.hands{
 	background-color:rgba(255,255,255,1);
 	width:100px;
 	height:100px;
-	float:left;
 	margin-left:100px;
 }
 
@@ -110,6 +108,7 @@ div.body_h{
 	background-color:rgba(200,200,200,1);
 	width:100px;
 	height:100px;
+	margin-left:100px;
 }
 
 div.pants{
