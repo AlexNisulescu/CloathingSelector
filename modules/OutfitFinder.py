@@ -214,7 +214,7 @@ def findWardrobe(csvPath: str, forecast:Forecast):
 
 def HC(temp,humidity,wind):
 	csvPath ="./resources/Cloathes.csv"
-	testForecast = Forecast(temp,humidity,wind)
+	testForecast = Forecast(temp,float(humidity/100),wind)
 	crtConfig,crtErr = findWardrobe(csvPath,testForecast)
 	for i in range(HILL_CLIMB_REITERS):
 		newConfig,newErr = findWardrobe(csvPath,testForecast)
