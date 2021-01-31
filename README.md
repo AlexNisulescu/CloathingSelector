@@ -1,12 +1,12 @@
-# :computer:CloathingSelector:sun_behind_rain_cloud:
+# :computer:CloathingSelector:snake:
 <a href="https://www.java.com/en/"><img src="https://img.shields.io/badge/language-Python-brightgreen"></a>
 <a href="https://openweathermap.org/"><img src="https://img.shields.io/badge/API-WeatherCast-yellow"></a>
 <a href="https://openweathermap.org/"><img src="https://img.shields.io/badge/Tool-Flask-orange"></a>
-
+:sun_behind_rain_cloud:
 ## Cuprins
 - [Introducere](#Introducere)
 - [Utilizarea aplicatiei](#Utilizare)
-- [Limbaje](#Limbae)
+- [Limbaje](#Limbaje)
 - [Realizatori](#Realizatori)
 ***
 
@@ -24,14 +24,16 @@
 ***
 
 ## Limbaje
-        Python3
-        HTML
+        Python3 
+
+        HTML 
+
         CSS
 ***
 
 ## Realizatori
-:man_student:<a href="https://github.com/0x435446">Mihai Cujba</a>
+:man_student:<a href="https://github.com/0x435446"> Mihai Cujba</a>
 
-:man_student:<a href="https://github.com/VladMisc">Vlad Florea</a>
+:man_student:<a href="https://github.com/VladMisc"> Vlad Florea</a>
 
-:man_student:<a href="https://github.com/AlexNisulescu">Alex Nisulescu</a>
+:man_student:<a href="https://github.com/AlexNisulescu"> Alex Nisulescu</a>
